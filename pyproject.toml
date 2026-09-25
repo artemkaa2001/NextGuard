@@ -1,0 +1,12 @@
+[project]
+name = "nextguard"
+version = "1.0.0"
+requires-python = ">=3.10"
+description = "IPv4 source-list firewall manager"
+license = {text = "MIT"}
+
+[project.scripts]
+nextguard = "nextguard.cli:main"
+
+[tool.unittest]
+start-directory = "tests"

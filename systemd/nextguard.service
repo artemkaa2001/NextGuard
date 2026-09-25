@@ -1,0 +1,13 @@
+[Unit]
+Description=Restore NextGuard IPv4 firewall generation
+After=network-pre.target
+Before=network.target
+ConditionPathExists=/var/lib/nextguard/current/generation.json
+
+[Service]
+Type=oneshot
+ExecStart=/usr/local/bin/nextguard restore
+RemainAfterExit=yes
+
+[Install]
+WantedBy=multi-user.target

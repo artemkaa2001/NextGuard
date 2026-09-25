@@ -1,0 +1,17 @@
+[Unit]
+Description=NextGuard bounded traffic event logger
+After=nextguard.service
+
+[Service]
+Type=simple
+Environment=PYTHONPATH=/opt/nextguard
+ExecStart=/usr/bin/python3 -m nextguard.logd
+Restart=on-failure
+RestartSec=5s
+NoNewPrivileges=true
+ProtectSystem=strict
+ReadWritePaths=/var/log/nextguard
+PrivateTmp=true
+
+[Install]
+WantedBy=multi-user.target

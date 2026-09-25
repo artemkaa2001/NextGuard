@@ -1,0 +1,12 @@
+[Unit]
+Description=Periodic NextGuard source-list update
+
+[Timer]
+OnBootSec=5min
+OnUnitActiveSec=60min
+RandomizedDelaySec=3min
+Persistent=true
+Unit=nextguard-update.service
+
+[Install]
+WantedBy=timers.target

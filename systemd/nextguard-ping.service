@@ -1,0 +1,13 @@
+[Unit]
+Description=NextGuard incoming IPv4 ping DROP rule
+After=network-pre.target
+Before=network.target
+
+[Service]
+Type=oneshot
+ExecStart=/opt/nextguard/bin/ping-control enable
+ExecStop=/opt/nextguard/bin/ping-control disable
+RemainAfterExit=yes
+
+[Install]
+WantedBy=multi-user.target

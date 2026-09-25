@@ -1,0 +1,8 @@
+/var/log/nextguard/*.log {
+    size 10M
+    rotate 5
+    compress
+    missingok
+    notifempty
+    copytruncate
+}

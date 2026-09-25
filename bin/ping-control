@@ -1,0 +1,4 @@
+#!/bin/sh
+set -eu
+export PYTHONPATH=/opt/nextguard
+exec /usr/bin/python3 -c 'import sys; from nextguard.ping import enable, disable; enable() if sys.argv[1] == "enable" else disable()' "$1"

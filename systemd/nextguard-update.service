@@ -1,0 +1,10 @@
+[Unit]
+Description=Update NextGuard IPv4 source lists
+After=network-online.target nextguard.service
+Wants=network-online.target
+
+[Service]
+Type=oneshot
+ExecStart=/usr/local/bin/nextguard update
+Nice=10
+IOSchedulingClass=idle
