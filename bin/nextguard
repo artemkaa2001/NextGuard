@@ -1,0 +1,4 @@
+#!/bin/sh
+set -eu
+export PYTHONPATH=/opt/nextguard
+exec /usr/bin/python3 -m nextguard.cli "$@"
